@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3F53F1A91F8864F600C4AC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53F1A81F8864F600C4AC0E /* AppDelegate.swift */; };
-		3F53F1AB1F8864F600C4AC0E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53F1AA1F8864F600C4AC0E /* FirstViewController.swift */; };
+		3F53F1AB1F8864F600C4AC0E /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53F1AA1F8864F600C4AC0E /* CalculatorViewController.swift */; };
 		3F53F1AD1F8864F600C4AC0E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53F1AC1F8864F600C4AC0E /* SecondViewController.swift */; };
 		3F53F1B01F8864F600C4AC0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F53F1AE1F8864F600C4AC0E /* Main.storyboard */; };
 		3F53F1B21F8864F600C4AC0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F53F1B11F8864F600C4AC0E /* Assets.xcassets */; };
 		3F53F1B51F8864F600C4AC0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F53F1B31F8864F600C4AC0E /* LaunchScreen.storyboard */; };
 		3F53F1C01F8864F700C4AC0E /* DLCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53F1BF1F8864F700C4AC0E /* DLCalcTests.swift */; };
 		3F53F1CB1F8864F700C4AC0E /* DLCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53F1CA1F8864F700C4AC0E /* DLCalcUITests.swift */; };
+		3F575D8C1F890D9C00D3DD47 /* Inning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F575D8B1F890D9C00D3DD47 /* Inning.swift */; };
+		3F575D8E1F89F6AC00D3DD47 /* dlTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3F575D8D1F89F6AC00D3DD47 /* dlTable.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		3F53F1A51F8864F600C4AC0E /* DLCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F53F1A81F8864F600C4AC0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F53F1AA1F8864F600C4AC0E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		3F53F1AA1F8864F600C4AC0E /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		3F53F1AC1F8864F600C4AC0E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3F53F1AF1F8864F600C4AC0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F53F1B11F8864F600C4AC0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		3F53F1C61F8864F700C4AC0E /* DLCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DLCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F53F1CA1F8864F700C4AC0E /* DLCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLCalcUITests.swift; sourceTree = "<group>"; };
 		3F53F1CC1F8864F700C4AC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F575D8B1F890D9C00D3DD47 /* Inning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inning.swift; sourceTree = "<group>"; };
+		3F575D8D1F89F6AC00D3DD47 /* dlTable.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dlTable.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		3F53F19C1F8864F600C4AC0E = {
 			isa = PBXGroup;
 			children = (
+				3F575D8D1F89F6AC00D3DD47 /* dlTable.txt */,
 				3F53F1A71F8864F600C4AC0E /* DLCalc */,
 				3F53F1BE1F8864F700C4AC0E /* DLCalcTests */,
 				3F53F1C91F8864F700C4AC0E /* DLCalcUITests */,
@@ -100,9 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				3F53F1A81F8864F600C4AC0E /* AppDelegate.swift */,
-				3F53F1AA1F8864F600C4AC0E /* FirstViewController.swift */,
+				3F53F1AA1F8864F600C4AC0E /* CalculatorViewController.swift */,
 				3F53F1AC1F8864F600C4AC0E /* SecondViewController.swift */,
 				3F53F1AE1F8864F600C4AC0E /* Main.storyboard */,
+				3F575D8B1F890D9C00D3DD47 /* Inning.swift */,
 				3F53F1B11F8864F600C4AC0E /* Assets.xcassets */,
 				3F53F1B31F8864F600C4AC0E /* LaunchScreen.storyboard */,
 				3F53F1B61F8864F600C4AC0E /* Info.plist */,
@@ -235,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F575D8E1F89F6AC00D3DD47 /* dlTable.txt in Resources */,
 				3F53F1B51F8864F600C4AC0E /* LaunchScreen.storyboard in Resources */,
 				3F53F1B21F8864F600C4AC0E /* Assets.xcassets in Resources */,
 				3F53F1B01F8864F600C4AC0E /* Main.storyboard in Resources */,
@@ -264,7 +271,8 @@
 			files = (
 				3F53F1AD1F8864F600C4AC0E /* SecondViewController.swift in Sources */,
 				3F53F1A91F8864F600C4AC0E /* AppDelegate.swift in Sources */,
-				3F53F1AB1F8864F600C4AC0E /* FirstViewController.swift in Sources */,
+				3F575D8C1F890D9C00D3DD47 /* Inning.swift in Sources */,
+				3F53F1AB1F8864F600C4AC0E /* CalculatorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Sachit-Anil-Kumar.DLCalc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -450,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Sachit-Anil-Kumar.DLCalc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
