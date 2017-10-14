@@ -24,6 +24,9 @@ class Inning {
     var resourcesAvail: Double?
     var parScore: Int?
     var target: Int?
+    var interruptions: [Interruption]?
+    var oversReducedToLast: Double?
+    var oversForTargetCalculation: Double?
     
     //MARK: Initialization
     init?(inningPosition: Int, oversAtBeginning: Double) {
@@ -37,7 +40,7 @@ class Inning {
         // Initialize stored properties.
         self.inningPosition = inningPosition
         self.oversAtBeginning = oversAtBeginning
-        self.resourcesLost = [0.0]
+        self.resourcesLost = []
         self.resourcesLostTotal = 0.0
     }
     
@@ -69,6 +72,7 @@ class Inning {
                 fatalError("some error happened")
             }
             self.resourcesAtBeginning = resourcesAvailAtBeginnning
+            self.convertInterruptionsToResourcesLost()
             self.setResourcesLostTotal()
             self.resourcesAvail = resourcesAvailAtBeginnning - self.resourcesLostTotal!
         } catch {
@@ -79,7 +83,7 @@ class Inning {
     func addPrematureTermination(oversAtStop: Double, wickets: Int){
         
         guard (self.inningPosition == 2) else {
-            fatalError("prematureTermination should only happen for 2nd inning")
+            fatalError("prematureTermination should only happen for 2nd innings")
         }
         
         let oversRemaining = subtractOvers(first: self.oversAtBeginning, second: oversAtStop)
@@ -177,5 +181,86 @@ class Inning {
         formatter.maximumFractionDigits = 0
         let parScoreString = formatter.string(from: self.parScore! as NSNumber)
         return parScoreString!
+    }
+    
+    func getFormattedTarget() -> String {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 0
+        let targetString = formatter.string(from: self.target! as NSNumber)
+        return targetString!
+    }
+    
+    func convertInterruptionsToResourcesLost(){
+        
+        let fileName = "dlTable"
+        let path = Bundle.main.path(forResource: fileName, ofType: "txt")
+        do {
+            let content = try String(contentsOfFile:path!, encoding: String.Encoding.utf8)
+            
+            let parsedCSV: [[CustomStringConvertible]] = content
+                .components(separatedBy: "\n")
+                .map({ // Step 1
+                    $0.components(separatedBy: ",")
+                        .map({ // Step 2
+                            if let double = Double($0) {
+                                return double
+                            }
+                            return $0
+                        })
+                })
+            
+            if (self.interruptions != nil){
+                let count = self.interruptions?.count
+                if (count?.distance(to: 0) != 0){
+                    for index in 0...((self.interruptions?.count)! - 1){
+                        let interruption = interruptions![index]
+                        let overRemAtStartSusp = subtractOvers(first: self.oversReducedToLast!, second: interruption.oversAtSuspension)
+                        let overRemAtStopSusp = subtractOvers(first: interruption.oversReducedTo, second: interruption.oversAtSuspension)
+                        self.oversReducedToLast = interruption.oversReducedTo
+                        
+                        guard let resourcesRemAtStartSusp = parsedCSV [Int(overRemAtStartSusp * 10)][interruption.wicketsAtSuspension] as? Double else {
+                            fatalError("some error happened")
+                        }
+                        guard let resourcesRemAtStopSusp = parsedCSV [Int(overRemAtStopSusp * 10)][interruption.wicketsAtSuspension] as? Double else {
+                            fatalError("some error happened")
+                        }
+                        
+                        self.resourcesLost?.append(resourcesRemAtStartSusp - resourcesRemAtStopSusp)
+                    }
+                }
+            }
+        } catch {
+            print("nil")
+        }
+    }
+    
+    func setTarget(firstInning: Inning) {
+        guard (self.inningPosition == 2) else {
+            fatalError("parScore and target calculation should only happen for 2nd inning")
+        }
+        guard firstInning.finalScore != nil else {
+            fatalError("firstInning.finalScore not available")
+        }
+        guard firstInning.resourcesAvail != nil else {
+            fatalError("firstInning.resourcesAvail not available")
+        }
+        guard self.resourcesAvail != nil else {
+            fatalError("secondInning.resourcesAvail not available")
+        }
+        
+        var parScoreDouble = 0.0
+        
+        if (self.resourcesAvail?.isEqual(to: firstInning.resourcesAvail!))!{
+            parScoreDouble = Double(firstInning.finalScore!)
+        } else if (self.resourcesAvail?.isLess(than: firstInning.resourcesAvail!))! {
+            parScoreDouble = Double(firstInning.finalScore!) * (self.resourcesAvail! / firstInning.resourcesAvail!)
+        } else {
+            parScoreDouble = Double(firstInning.finalScore!) + (self.resourcesAvail! - firstInning.resourcesAvail!) * G50 / 100
+        }
+        
+        let parScoreInt = Int(floor(parScoreDouble))
+        let targetInt = parScoreInt + 1
+        self.target = targetInt
     }
 }

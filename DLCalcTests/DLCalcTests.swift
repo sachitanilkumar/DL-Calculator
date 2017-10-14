@@ -149,4 +149,14 @@ class DLCalcTests: XCTestCase {
         let parScoreText = newInning?.getFormattedParScore()
         XCTAssertEqual(parScoreText, "145")
     }
+    
+    func testInterruptionInitializationSuceeds(){
+        let newInterruption = Interruption(oversAtSuspension: 20.0, oversReducedTo: 30.0, wicketsAtSuspension: 4)
+        XCTAssertNotNil(newInterruption)
+    }
+    
+    func testInterruptionInitializationFails(){
+        let newInterruption = Interruption(oversAtSuspension: 20.0, oversReducedTo: 15.0, wicketsAtSuspension: 4)
+        XCTAssertNil(newInterruption)
+    }
 }
