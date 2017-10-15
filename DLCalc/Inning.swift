@@ -86,7 +86,7 @@ class Inning {
             fatalError("prematureTermination should only happen for 2nd innings")
         }
         
-        let oversRemaining = subtractOvers(first: self.oversAtBeginning, second: oversAtStop)
+        let oversRemaining = subtractOvers(first: self.oversReducedToLast!, second: oversAtStop)
         
         let fileName = "dlTable"
         let path = Bundle.main.path(forResource: fileName, ofType: "txt")
@@ -104,6 +104,10 @@ class Inning {
                             return $0
                         })
                 })
+            guard let resourcesAvailAtBeginnning = parsedCSV [Int(self.oversAtBeginning * 10)][0] as? Double else {
+                fatalError("some error happened")
+            }
+            
             guard let resourcesAvailAtSuspension = parsedCSV [Int(oversRemaining * 10)][wickets] as? Double else {
                 fatalError("some error happened")
             }
@@ -111,6 +115,8 @@ class Inning {
             let resourcesLostDueToThisInteruption = resourcesAvailAtSuspension - resourcesAvailAtResumption
             
             self.resourcesLost?.append(resourcesLostDueToThisInteruption)
+            self.setResourcesLostTotal()
+            self.resourcesAvail = resourcesAvailAtBeginnning - self.resourcesLostTotal!
         } catch {
             print("nil")
         }

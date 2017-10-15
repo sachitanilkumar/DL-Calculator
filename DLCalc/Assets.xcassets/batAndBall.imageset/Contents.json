@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "second.pdf"
+      "filename" : "cup-match1.jpg",
+      "scale" : "1x"
     }
   ],
   "info" : {

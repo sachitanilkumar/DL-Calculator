@@ -534,7 +534,7 @@ If switched off, the app uses the old Duckworth Lewis Standard Edition table whi
         <scene sceneID="NwZ-Ef-k7G">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q3K-xW-74s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calculator" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="calculatorIcon" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="zi2-gQ-jmw">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -571,7 +571,7 @@ If switched off, the app uses the old Duckworth Lewis Standard Edition table whi
         <scene sceneID="VG1-ac-npc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KR3-tE-BiK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="0zw-LL-SWO">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -608,9 +608,9 @@ If switched off, the app uses the old Duckworth Lewis Standard Edition table whi
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-oh-UgG">
                                                 <rect key="frame" x="16" y="55.5" width="343" height="484"/>
-                                                <mutableString key="text">DL or Duckworth Lewis method was used by ICC for determining winner through calculation of targets and par scores in limited over matches affected by inclement weather. 
+                                                <string key="text">DL or Duckworth Lewis method was used by ICC for determining winner through calculation of targets and par scores in limited over matches affected by inclement weather. 
 It works on the principal that a team has two types of resources during their batting innings - overs and wickets. The resources are used up during the innings until they are completely depleted when the team is all out or out of overs. If a team loses overs during their innings, they are not able to make full use of the resources that were available to them at the start of the innings. Hence, the target they are setting or the target that they are set is revised to accommodate this loss of resources. 
-Another important point to note is that when the overs are lost (along with wickets remaining at that point and number of overs lost) is also important in the determining the magnitude of the resources lost. Consider the following scenarios - If a team knows at the start of the innings that they only have 40 overs to bat rather than 50, they can plan accordingly and with enough wickets in hand accelerate from the end of 30 overs. But, if a break or interruption occurs when the team is 200/0 at the end of 40 overs and the match is reduced to 40 overs a side, they have lost a significantly larger chunk of their resources even though in both cases the team lost 10 overs with 10 wickets in hand.</mutableString>
+Another important point to note is that when the overs are lost (along with wickets remaining at that point and number of overs lost) is also important in the determining the magnitude of the resources lost. Consider the following scenarios - If a team knows at the start of the innings that they only have 40 overs to bat rather than 50, they can plan accordingly and with enough wickets in hand accelerate from the end of 30 overs. But, if a break or interruption occurs when the team is 200/0 at the end of 40 overs and the match is reduced to 40 overs a side, they have lost a significantly larger chunk of their resources even though in both cases the team lost 10 overs with 10 wickets in hand.</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -626,12 +626,12 @@ Another important point to note is that when the overs are lost (along with wick
                                                 <mutableString key="text">Par score is the score a team should have reached with a ‘X’ wickets down at the end of ‘Y’ overs if they are to stand a reasonable chances to chase down the target set to them. Teams keep an eye on this when they are expecting an interruption/stoppage in play, especially if they suspect that the match will be called off with no more play. 
 Target is the revised score that a team is expected to reach after they have lost some of their resources after an interruption in play. This assumes that there are no more interruptions - if an interruption does occur, the target is revised further.
 As ESPNcricinfo puts it “In a nutshell, par scores are calculated before an interruption, while targets are calculated after an interruption.” 
-If a team were to chase 301 in 50 overs and rain during the innings break reduced their innings to 20 overs, they will be expected to chase 170. Conversely, if they batted their first 20 overs when an interruption forced the play to be called off, they would be expected to be better placed than 74/0, 84/1, 98/2, 115/3 etc. This is because in the first case, they could go into the innings knowing that they could expend their resource of 10 wickets in just 20 overs while in the second case they could not.</mutableString>
+If a team were to chase 301 in 50 overs and rain during the innings break reduced their innings to 20 overs, their target will be 170. Conversely, if they batted their first 20 overs when an interruption forced the play to be called off, they would be expected to be better placed than 74/0, 84/1, 98/2, 115/3 etc. This is because in the first case, they could go into the innings knowing that they could expend their resource of 10 wickets in just 20 overs while in the second case they could not.</mutableString>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum number of overs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56f-Eq-eBp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum number of overs" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56f-Eq-eBp">
                                                 <rect key="frame" x="16" y="1041" width="343" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
@@ -639,8 +639,8 @@ If a team were to chase 301 in 50 overs and rain during the innings break reduce
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-Ax-Vgq">
                                                 <rect key="frame" x="16" y="1080.5" width="343" height="196"/>
-                                                <mutableString key="text">Even though par scores and targets can be calculated for any over-wicket combinations, both teams must have faced a minimum number of overs for the winner to be determined by DL method. The stipulated minimum for a 50-over match is 20 overs and for a T20 it is 5 overs.
-If either of the teams have not completed their stipulated minimum number of overs and play has been called off, DL method will not be applied to determine a winner and the match will be chalked down as a no result (with both teams sharing points in a point based tournament).</mutableString>
+                                                <string key="text">Even though par scores and targets can be calculated for any over-wicket combinations, both teams must have faced a minimum number of overs for the winner to be determined by DL method. The stipulated minimum for a 50-over match is 20 overs and for a T20 it is 5 overs.
+If either of the teams have not completed their stipulated minimum number of overs and play has been called off, DL method will not be applied to determine a winner and the match will be chalked down as a no result (with both teams sharing points in a point based tournament).</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -704,7 +704,7 @@ If either of the teams have not completed their stipulated minimum number of ove
         <scene sceneID="iN5-S0-qPe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jCX-Xx-mRX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="About" id="jMG-NN-gIA"/>
+                    <tabBarItem key="tabBarItem" title="About" image="infoIcon" id="jMG-NN-gIA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="Pf9-yv-D15">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -721,8 +721,9 @@ If either of the teams have not completed their stipulated minimum number of ove
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="calculatorIcon" width="25" height="25"/>
+        <image name="infoIcon" width="25" height="25"/>
+        <image name="settingsIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2Wt-hp-iUk"/>

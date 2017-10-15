@@ -226,6 +226,7 @@ class InterruptionViewController: UIViewController, UITextFieldDelegate, UIPicke
         wicketsPickerView.showsSelectionIndicator = true
         
         let doneButtonWickets = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(InterruptionViewController.donePickerWickets))
+        doneButtonWickets.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarWickets = UIToolbar()
         toolBarWickets.barStyle = UIBarStyle.default
         toolBarWickets.isTranslucent = true
@@ -244,6 +245,7 @@ class InterruptionViewController: UIViewController, UITextFieldDelegate, UIPicke
         oversSuspPickerView.showsSelectionIndicator = true
         
         let doneButtonOversSusp = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(InterruptionViewController.donePickerOversSusp))
+        doneButtonOversSusp.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarOversSusp = UIToolbar()
         toolBarOversSusp.barStyle = UIBarStyle.default
         toolBarOversSusp.isTranslucent = true
@@ -262,6 +264,7 @@ class InterruptionViewController: UIViewController, UITextFieldDelegate, UIPicke
         oversRedToPickerView.showsSelectionIndicator = true
         
         let doneButtonOversRedTo = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(InterruptionViewController.donePickerOversRedTo))
+        doneButtonOversRedTo.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarOversRedTo = UIToolbar()
         toolBarOversRedTo.barStyle = UIBarStyle.default
         toolBarOversRedTo.isTranslucent = true

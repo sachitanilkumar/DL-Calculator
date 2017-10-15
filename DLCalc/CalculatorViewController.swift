@@ -275,8 +275,8 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIPickerV
 //        secondInning?.oversForTargetCalculation = overRedToInn2
 //        secondInning?.setTarget(firstInning: firstInning!)
         
-        secondInning?.addPrematureTermination(oversAtStop: team2overs, wickets: team2Wkts)
         secondInning?.setResourcesAvail()
+        secondInning?.addPrematureTermination(oversAtStop: team2overs, wickets: team2Wkts)
         secondInning?.setParScore(firstInning: firstInning!)
         
         let parScoreText = secondInning?.getFormattedParScore()
@@ -479,6 +479,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIPickerV
         wicketsTeam2PickerView.showsSelectionIndicator = true
         
         let doneButtonWicketsTeam2 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(CalculatorViewController.donePickerWicketsTeam2))
+        doneButtonWicketsTeam2.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarWicketsTeam2 = UIToolbar()
         toolBarWicketsTeam2.barStyle = UIBarStyle.default
         toolBarWicketsTeam2.isTranslucent = true
@@ -499,6 +500,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIPickerV
         oversTeam1PickerView.selectRow(0, inComponent: 1, animated: true)
         
         let doneButtonOversTeam1 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(CalculatorViewController.donePickerOversTeam1))
+        doneButtonOversTeam1.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarOversTeam1 = UIToolbar()
         toolBarOversTeam1.barStyle = UIBarStyle.default
         toolBarOversTeam1.isTranslucent = true
@@ -519,6 +521,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIPickerV
         oversTeam2PickerView.selectRow(0, inComponent: 1, animated: true)
         
         let doneButtonOversTeam2 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(CalculatorViewController.donePickerOversTeam2))
+        doneButtonOversTeam2.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarOversTeam2 = UIToolbar()
         toolBarOversTeam2.barStyle = UIBarStyle.default
         toolBarOversTeam2.isTranslucent = true
@@ -537,6 +540,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIPickerV
         oversTeam2CurrentPickerView.showsSelectionIndicator = true
         
         let doneButtonCurrentOversTeam2 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(CalculatorViewController.donePickerCurrentOversTeam2))
+        doneButtonCurrentOversTeam2.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarCurrentOversTeam2 = UIToolbar()
         toolBarCurrentOversTeam2.barStyle = UIBarStyle.default
         toolBarCurrentOversTeam2.isTranslucent = true
@@ -549,6 +553,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate, UIPickerV
         team2OversCurrent.inputAccessoryView = toolBarCurrentOversTeam2
         
         let doneButtonRuns = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(CalculatorViewController.doneRuns))
+        doneButtonRuns.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         let toolBarRuns = UIToolbar()
         toolBarRuns.barStyle = UIBarStyle.default
         toolBarRuns.isTranslucent = true
