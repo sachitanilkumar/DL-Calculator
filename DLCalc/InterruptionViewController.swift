@@ -15,9 +15,9 @@ class InterruptionViewController: UIViewController, UITextFieldDelegate, UIPicke
     let overSusp = 3
     let overRedTo = 4
     
-    let wkts = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    var oversSusp = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"],["0", "1", "2", "3", "4", "5"]]
-    var oversRedTo = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"],["0", "1", "2", "3", "4", "5"]]
+    let wkts = ["","0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    var oversSusp = [["","0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"],["","0", "1", "2", "3", "4", "5"]]
+    var oversRedTo = [["","0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"],["","0", "1", "2", "3", "4", "5"]]
     
     //MARK: Properties
     @IBOutlet weak var oversAtSuspension: UITextField!
@@ -98,22 +98,43 @@ class InterruptionViewController: UIViewController, UITextFieldDelegate, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == wkt {
-            wicketsAtSuspension.text = wkts[row]
+            if wkts[row] == "" {
+                pickerView.selectRow(row + 1, inComponent: 0, animated: true)
+                wicketsAtSuspension.text = wkts[row + 1]
+            } else {
+                wicketsAtSuspension.text = wkts[row]
+            }
         }
         if pickerView.tag == overSusp {
-            let overs = oversSusp[0][pickerView.selectedRow(inComponent: 0)]
+            var overs = oversSusp[0][pickerView.selectedRow(inComponent: 0)]
             var balls = oversSusp[1][pickerView.selectedRow(inComponent: 1)]
             if (overs == oversSusp[0][oversSusp[0].count-1] && 0 != Int(balls)){
-                pickerView.selectRow(0, inComponent: 1, animated: true)
+                pickerView.selectRow(1, inComponent: 1, animated: true)
+                balls = "0"
+            }
+            if (overs == ""){
+                pickerView.selectRow(1, inComponent: 0, animated: true)
+                overs = "0"
+            }
+            if (balls == ""){
+                pickerView.selectRow(1, inComponent: 1, animated: true)
                 balls = "0"
             }
             oversAtSuspension.text = overs + "." + balls
         }
         if pickerView.tag == overRedTo {
-            let overs = oversRedTo[0][pickerView.selectedRow(inComponent: 0)]
+            var overs = oversRedTo[0][pickerView.selectedRow(inComponent: 0)]
             var balls = oversRedTo[1][pickerView.selectedRow(inComponent: 1)]
             if (overs == oversRedTo[0][oversRedTo[0].count-1] && 0 != Int(balls)){
-                pickerView.selectRow(0, inComponent: 1, animated: true)
+                pickerView.selectRow(1, inComponent: 1, animated: true)
+                balls = "0"
+            }
+            if (overs == ""){
+                pickerView.selectRow(1, inComponent: 0, animated: true)
+                overs = "0"
+            }
+            if (balls == ""){
+                pickerView.selectRow(1, inComponent: 1, animated: true)
                 balls = "0"
             }
             oversReducedTo.text = overs + "." + balls

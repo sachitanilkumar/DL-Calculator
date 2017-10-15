@@ -484,8 +484,8 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNK-41-bCa">
                                 <rect key="frame" x="16" y="55" width="343" height="196"/>
-                                <mutableString key="text">ICC uses DLS (Duckworth Lewis Stern) method for rain affected matches, but the Stern/Professional Edition tables used are not public. This app uses other approximation techniques to arrive at the DLS par scores and targets. Therefore, slight inaccuracies when compared to actual DLS data may occur (maximum 1-2 runs). 
-If switched off, the app uses the old Duckworth Lewis Standard Edition table which is available to public. The par scores and targets will be completely accurate compared to the older Duckworth Lewis method.</mutableString>
+                                <string key="text">ICC uses DLS (Duckworth Lewis Stern) method for rain affected matches, but the Stern/Professional Edition tables used are not public. This app uses other approximation techniques to arrive at the DLS par scores and targets. Therefore, slight inaccuracies when compared to actual DLS data may occur (maximum 1-2 runs). 
+If switched off, the app uses the old Duckworth Lewis Standard Edition table which is available to public. The par scores and targets will be completely accurate compared to the older Duckworth Lewis method.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -591,51 +591,57 @@ If switched off, the app uses the old Duckworth Lewis Standard Edition table whi
             <objects>
                 <viewController id="4gU-VP-GTd" customClass="AboutViewController" customModule="DLCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kjl-jj-ed0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1884"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6N-Yp-ixo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1835"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kau-T5-xAR" userLabel="mainView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1292.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVS-Jo-IVS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About DL Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVS-Jo-IVS">
                                                 <rect key="frame" x="16" y="16" width="343" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-oh-UgG">
-                                                <rect key="frame" x="16" y="55.5" width="343" height="21"/>
-                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvE-oh-UgG">
+                                                <rect key="frame" x="16" y="55.5" width="343" height="484"/>
+                                                <mutableString key="text">DL or Duckworth Lewis method was used by ICC for determining winner through calculation of targets and par scores in limited over matches affected by inclement weather. 
+It works on the principal that a team has two types of resources during their batting innings - overs and wickets. The resources are used up during the innings until they are completely depleted when the team is all out or out of overs. If a team loses overs during their innings, they are not able to make full use of the resources that were available to them at the start of the innings. Hence, the target they are setting or the target that they are set is revised to accommodate this loss of resources. 
+Another important point to note is that when the overs are lost (along with wickets remaining at that point and number of overs lost) is also important in the determining the magnitude of the resources lost. Consider the following scenarios - If a team knows at the start of the innings that they only have 40 overs to bat rather than 50, they can plan accordingly and with enough wickets in hand accelerate from the end of 30 overs. But, if a break or interruption occurs when the team is 200/0 at the end of 40 overs and the match is reduced to 40 overs a side, they have lost a significantly larger chunk of their resources even though in both cases the team lost 10 overs with 10 wickets in hand.</mutableString>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kR-je-esc">
-                                                <rect key="frame" x="16" y="92.5" width="343" height="31.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Par Score vs Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kR-je-esc">
+                                                <rect key="frame" x="16" y="555.5" width="343" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-8o-UmU">
-                                                <rect key="frame" x="16" y="132" width="343" height="21"/>
-                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-8o-UmU">
+                                                <rect key="frame" x="16" y="595" width="343" height="430"/>
+                                                <mutableString key="text">Par score is the score a team should have reached with a ‘X’ wickets down at the end of ‘Y’ overs if they are to stand a reasonable chances to chase down the target set to them. Teams keep an eye on this when they are expecting an interruption/stoppage in play, especially if they suspect that the match will be called off with no more play. 
+Target is the revised score that a team is expected to reach after they have lost some of their resources after an interruption in play. This assumes that there are no more interruptions - if an interruption does occur, the target is revised further.
+As ESPNcricinfo puts it “In a nutshell, par scores are calculated before an interruption, while targets are calculated after an interruption.” 
+If a team were to chase 301 in 50 overs and rain during the innings break reduced their innings to 20 overs, they will be expected to chase 170. Conversely, if they batted their first 20 overs when an interruption forced the play to be called off, they would be expected to be better placed than 74/0, 84/1, 98/2, 115/3 etc. This is because in the first case, they could go into the innings knowing that they could expend their resource of 10 wickets in just 20 overs while in the second case they could not.</mutableString>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56f-Eq-eBp">
-                                                <rect key="frame" x="16" y="169" width="343" height="31.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum number of overs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56f-Eq-eBp">
+                                                <rect key="frame" x="16" y="1041" width="343" height="31.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-Ax-Vgq">
-                                                <rect key="frame" x="16" y="208.5" width="343" height="21"/>
-                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-Ax-Vgq">
+                                                <rect key="frame" x="16" y="1080.5" width="343" height="196"/>
+                                                <mutableString key="text">Even though par scores and targets can be calculated for any over-wicket combinations, both teams must have faced a minimum number of overs for the winner to be determined by DL method. The stipulated minimum for a 50-over match is 20 overs and for a T20 it is 5 overs.
+If either of the teams have not completed their stipulated minimum number of overs and play has been called off, DL method will not be applied to determine a winner and the match will be chalked down as a no result (with both teams sharing points in a point based tournament).</mutableString>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -684,6 +690,7 @@ If switched off, the app uses the old Duckworth Lewis Standard Edition table whi
                     </view>
                     <navigationItem key="navigationItem" title="About" id="iwQ-o4-qed"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="2000"/>
                     <connections>
                         <outlet property="finalLabel" destination="tJV-Ax-Vgq" id="qmM-g4-aq7"/>
                         <outlet property="mainView" destination="Kau-T5-xAR" id="GN7-SD-JSQ"/>
@@ -691,7 +698,7 @@ If switched off, the app uses the old Duckworth Lewis Standard Edition table whi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zl-9f-9Ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="1048.4257871064469"/>
+            <point key="canvasLocation" x="748" y="1648"/>
         </scene>
         <!--About-->
         <scene sceneID="iN5-S0-qPe">
